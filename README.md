@@ -1,4 +1,6 @@
-# LOL Stats - Based originally on AngularJS Phone Catalog Tutorial Application
+# LOL Stats
+
+Based originally on AngularJS [Phone Catalog Tutorial] (https://github.com/angular/angular-phonecat)
 
 ## Overview
 
