@@ -1,0 +1,118 @@
+<div class="summoner-images">
+  <img ng-src="{{img}}"
+       class="summoner"
+       ng-repeat="img in summoner.images"
+       ng-class="{active: mainImageUrl==img}">
+</div>
+
+<h1>{{summoner.name}}</h1>
+
+<p>{{summoner.description}}</p>
+
+<ul class="summoner-thumbs">
+  <li ng-repeat="img in summoner.images">
+    <img ng-src="{{img}}" ng-click="setImage(img)">
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in summoner.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Battery</span>
+    <dl>
+      <dt>Type</dt>
+      <dd>{{summoner.battery.type}}</dd>
+      <dt>Talk Time</dt>
+      <dd>{{summoner.battery.talkTime}}</dd>
+      <dt>Standby time (max)</dt>
+      <dd>{{summoner.battery.standbyTime}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Storage and Memory</span>
+    <dl>
+      <dt>RAM</dt>
+      <dd>{{summoner.storage.ram}}</dd>
+      <dt>Internal Storage</dt>
+      <dd>{{summoner.storage.flash}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Connectivity</span>
+    <dl>
+      <dt>Network Support</dt>
+      <dd>{{summoner.connectivity.cell}}</dd>
+      <dt>WiFi</dt>
+      <dd>{{summoner.connectivity.wifi}}</dd>
+      <dt>Bluetooth</dt>
+      <dd>{{summoner.connectivity.bluetooth}}</dd>
+      <dt>Infrared</dt>
+      <dd>{{summoner.connectivity.infrared | checkmark}}</dd>
+      <dt>GPS</dt>
+      <dd>{{summoner.connectivity.gps | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Android</span>
+    <dl>
+      <dt>OS Version</dt>
+      <dd>{{summoner.android.os}}</dd>
+      <dt>UI</dt>
+      <dd>{{summoner.android.ui}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Size and Weight</span>
+    <dl>
+      <dt>Dimensions</dt>
+      <dd ng-repeat="dim in summoner.sizeAndWeight.dimensions">{{dim}}</dd>
+      <dt>Weight</dt>
+      <dd>{{summoner.sizeAndWeight.weight}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Display</span>
+    <dl>
+      <dt>Screen size</dt>
+      <dd>{{summoner.display.screenSize}}</dd>
+      <dt>Screen resolution</dt>
+      <dd>{{summoner.display.screenResolution}}</dd>
+      <dt>Touch screen</dt>
+      <dd>{{summoner.display.touchScreen | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Hardware</span>
+    <dl>
+      <dt>CPU</dt>
+      <dd>{{summoner.hardware.cpu}}</dd>
+      <dt>USB</dt>
+      <dd>{{summoner.hardware.usb}}</dd>
+      <dt>Audio / headsummoner jack</dt>
+      <dd>{{summoner.hardware.audioJack}}</dd>
+      <dt>FM Radio</dt>
+      <dd>{{summoner.hardware.fmRadio | checkmark}}</dd>
+      <dt>Accelerometer</dt>
+      <dd>{{summoner.hardware.accelerometer | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Camera</span>
+    <dl>
+      <dt>Primary</dt>
+      <dd>{{summoner.camera.primary}}</dd>
+      <dt>Features</dt>
+      <dd>{{summoner.camera.features.join(', ')}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Additional Features</span>
+    <dd>{{summoner.additionalFeatures}}</dd>
+  </li>
+</ul>
